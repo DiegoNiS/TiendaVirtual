@@ -17,9 +17,9 @@ use DBI;
   my $dbh = DBI->connect($dsn,$user,$password) or die("No se pudo conctar!");
 
   my $sth = $dbh->prepare("INSERT INTO Productos(Categoria,Nombre,Precio) VALUES(?,?,?)");
-  $sth->execute($categoria,$nombre,$percio);
+  $sth->execute($categoria,$nombre,$precio);
 
   $sth->finish;
   $dbh->disconnect;
 
-  print $q->redirect("../vendedor.html");
+  print $q->redirect("listar_productos_admin.pl");

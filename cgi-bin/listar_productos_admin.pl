@@ -32,7 +32,7 @@ print <<HTML;
 HTML
 
 while (my @row = $sth->fetchrow_array()) {
-  print "<li><a href='#'>$row[0]</a></li>\n";
+  print "<li><a href='mostrar_productos_admin.pl?tipo_producto=$row[0]'>$row[0]</a></li>\n";
 }
 
 print <<HTML;           

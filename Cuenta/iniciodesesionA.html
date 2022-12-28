@@ -9,25 +9,26 @@
     <link rel="stylesheet" type="text/css" href="iniciodesesion.css">
     <title>Inicio de Sesion - Administrador</title>
 </head>
+
 <body>
-    <h2>ADMINISTRADOR</h2><br>
+        <h2>ADMINISTRADOR</h2><br>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="iniciodesesionA.html">
-                <h1>Crear una cuenta Admin</h1><br>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" /><br>
-                <button>Registrarme</button>
+            <form action="./cgi-bin/registerA.pl" method="POST">
+                <h1>Crear una cuenta ADMIN</h1><br>
+                <input name="usuario" type="text" placeholder="Nombre de Usuario" required/>
+                <input name="correo" type="email" placeholder="Correo" required/>
+                <input name="contrasena" type="password" placeholder="Contraseña" required/><br>
+                <button type="submit">Registrarme</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#index.html">
+            <form action="./cgi-bin/loginA.pl" method="POST">
                 <h1>Ingresar</h1><br>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" /><br>
-                <button>Ingresar</button>
-            </form>
+                <input name="correo" type="email" placeholder="Correo" required/>
+                <input name="contrasena" type="password" placeholder="Contraseña" required/><br>
+                <button type="submit">Ingresar</button>
+            </form>    
         </div>
         <div class="overlay-container">
             <div class="overlay">
@@ -51,7 +52,7 @@
             <a target="_blank" href="">Ferresur</a>
             - 2022 Todos los derechos reservados</a>.
             <i class="fa fa-heart"></i>
-            <a href="iniciodesesionC.html">Soy Cliente</a>
+            <a target="_blank" href="iniciodesesionC.html">Soy Cliente</a>
         </p>
     </footer>
     <script>
@@ -70,4 +71,5 @@
         }       
     </script>
 </body>
+
 </html>

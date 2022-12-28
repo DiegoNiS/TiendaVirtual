@@ -24,17 +24,16 @@ else{
 }
 
 sub successLogin{
-    print "<script>\n";
-    print "alert('Iniciando cuenta del usuario $usuario ....');\n";
-    print "</script>\n";
-    print $q->redirect("../ventas/paginaPrincipal.html");
-}
+    #print "<script>\n";
+    #print "alert('Iniciando cuenta del usuario $usuario ....');\n";
+    #print "</script>\n";
+    print $q->redirect("../../Ventas/paginaPrincipal.html");}
 
 sub showLogin{
     if ($correo ne checkLogin($correo)){
-        print "<script>\n";
-        print "alert('Ese CORREO no existe...');\n";
-        print "</script>\n";
+        #print "<script>\n";
+        #print "alert('Ese CORREO no existe...');\n";
+        #print "</script>\n";
     }
 }
 

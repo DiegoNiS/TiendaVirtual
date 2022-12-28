@@ -85,5 +85,6 @@ nav a{
   border: thick solid #DB7634; 
   text-decoration: none;
   font-size: 15px;
+  cursor:pointer;
   transition: 2s;
 }

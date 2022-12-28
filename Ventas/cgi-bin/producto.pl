@@ -25,7 +25,7 @@ print <<HTML;
 					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
 				</select>
 				<a href="../paginaPrincipal.html">Pagina principal</a>
-				<a href="login.html">Mi cuenta</a>
+				<a href="../../Cuenta/iniciodesesionC.html">Mi cuenta</a>
 			</nav>
 		</header>
 		<div = style="text-align: center;">

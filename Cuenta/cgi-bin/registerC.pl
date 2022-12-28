@@ -48,10 +48,16 @@ sub successRegister{
     my $usuario = shift;
     my $correo = shift;
 
+    # Crea un objeto CGI
+    my $q = CGI->new;
+
+    print $q->header; # Imprime el encabezado HTTP
     print "<script>\n";
     print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
     print "</script>\n";
-    print $q->redirect("./iniciodesesionC.html");
+
+    # Redirige a la página iniciodesesionC.html
+    print $q->redirect("../iniciodesesionC.html");
 }
 
 sub showRegister{

@@ -25,3 +25,42 @@ if (defined($usuario) and defined($correo) and defined($contrasena)) {
 else {
     showRegister();
 }
+
+sub checkUsuario {
+    my $usuarioQuery = $_[0];
+
+    my $user = 'alumno';
+    my $password = 'pweb1';
+    my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.23';
+    my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar a la base de datos");
+
+    my $sql = "SELECT usuario FROM Administradores WHERE usuario=?";
+    my $sth = $dbh->prepare($sql);
+    $sth->execute($usuarioQuery);
+    my @row = $sth->fetchrow_array;
+    $sth->finish;
+    $dbh->disconnect;
+
+    return @row;
+}
+
+sub successRegister{
+    print "<script>\n";
+    print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
+    print "</script>\n";
+    print $q->redirect("./iniciodesesionA.html");
+}
+
+sub showRegister{
+    
+    if ($usuario ne checkUsuario($usuario)){
+        print "<script>\n";
+        print "alert('Ese USUARIO ya esta registrado, cambie...');\n";
+        print "</script>\n";
+    }
+    if ($correo ne checkUsuario($correo)){
+        print "<script>\n";
+        print "alert('Ese CORREO ya esta registrado, cambie...');\n";
+        print "</script>\n";
+    }
+}

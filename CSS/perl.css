@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family:'Times New Roman', Times, serif;
+    background:rgb(133, 133, 133);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  }
+  
+  thead th, tfoot th {
+    font-family: 'Rock Salt', cursive;
+  }
+  
+  
+  tbody td {
+    text-align: center;
+  }
+  
+  tfoot th {
+    text-align: right;
+  }
+
+  table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 0 0 1em 0;
+    caption-side: top;
+ }
+ caption, td, th {
+    padding: 0.3em;
+ }
+ th, td {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid rgb(0, 0, 0);
+ }
+ th:lastchild, td:lastchild {
+     border-right: 0;
+ }
+ th {
+    width: 25%;
+ }
+
+ :root{
+    --pink:#1d79c4;
+}
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color:rgb(9, 182, 212);
+    padding:1rem;
+    margin:2rem 0;
+    background:rgb(255, 255, 255);
+}
+
+.heading span{
+    color:var(--pink);
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background:#333;
+    color:#fff;
+    padding:.9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background:var(--pink);
+}
+
+
+.content {
+    text-align: left;
+    margin: 0px 40px;
+}
+
+.buttonNH {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 0px;
+    border-radius: 7px;
+    padding: 7px 7px;/*Margen por dentro*/
+    margin: 7px 7px;/*Margen por fuera*/
+}
+
+.cajaTitulo {
+    padding: 5px 5px;
+    width: 100%;
+    height: auto;
+    font-family: 'Chivo Mono', monospace;
+}
+
+.cajaContent {
+    padding: 5px 5px;
+    width: 100%;
+    height: 60vh;
+    font-family: 'Martian Mono', monospace;
+    resize: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.nextbotc{
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:rgb(66, 66, 66);
+    padding:2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgb(133, 133, 133);
+}
+
+header .logo{
+    font-size: 3rem;
+    color:rgb(255, 255, 255);
+    font-weight: bolder;
+}
+
+header .logo span{
+    color:var(--pink);
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color:rgb(255, 255, 255);
+}
+
+header .navbar a:hover{
+    color:var(--pink);
+}
+
+header .icons a{
+    font-size: 2.5rem;
+    color:rgb(255, 255, 255);
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color:var(--pink);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#333;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+    border:.1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+
+
+@media (max-width:991px){
+    
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+
+}
+
+@media (max-width:768px){
+
+    header .fa-bars{
+        display: block;
+    }
+
+    header .navbar{
+        position:absolute;
+        top:100%; left:0; right:0;
+        background:#eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+
+    
+}
+
+@media (max-width:450px){
+    
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+}

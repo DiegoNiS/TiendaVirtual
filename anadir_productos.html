@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/vendedor.css">
+    <link rel="stylesheet" href="CSS/perl.css">
     <title>Interface Administradores</title>
 </head>
-<body>
-    <form action="cgi-bin/anadir.pl">
-        <div class="content">
-            <label for="nombre">Nombre del producto: </label>
-            <input name="nombre" type="text" class="cajaTitulo" id="nombre" placeholder="Nombre del articulo" required>
-            <label for="categoria">Categoría: </label>
-            <input name="categoria" type="text" class="cajaTitulo" id="categoria" placeholder="Categoria existente o nueva" required>
-            <label for="precio">Precio: </label>
-            <input name="precio" type="text" class="cajaTitulo" id="precio" placeholder="s./ " required>
-            <div class="nextbotc">
-                <input type="submit" value="Añadir elemento" class="buttonNH">
-                <input type="button" value="Cancel" onclick="location.href='vendedor.html'" class="buttonNH">
+<body align="center">
+    <br>
+    <caption>
+        <br>
+        <h1><br> NUEVO PRODUCTO</h1>
+    </caption>
+    <br>
+    <form  action="cgi-bin/anadir.pl">
+        <table>
+            <div class="content">
+                <label for="nombre">Nombre del producto: </label>
+                <input name="nombre" type="text" class="cajaTitulo" id="nombre" placeholder="Nombre del articulo" required>
+                <label for="categoria">Categoría: </label>
+                <input name="categoria" type="text" class="cajaTitulo" id="categoria" placeholder="Categoria existente o nueva" required>
+                <label for="precio">Precio: </label>
+                <input name="precio" type="text" class="cajaTitulo" id="precio" placeholder="s./ " required>
+                <div class="nextbotc">
+                    <input type="submit" value="Añadir elemento" class="buttonNH">
+                    <input type="button" value="Cancel" onclick="location.href='vendedor.html'" class="buttonNH">
+                </div>
             </div>
-        </div>
+        </table>
     </form>
 </body>
 </html>

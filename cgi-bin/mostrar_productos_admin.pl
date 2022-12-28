@@ -14,14 +14,25 @@ print <<HTML;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/vendedor.css">
+    <link rel="stylesheet" href="../CSS/perl.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Interface Administradores</title>
 </head>
 <body>
-    <div class="cont">
-        <div class="contenedor_lista" id="lista">
-            <ul>
-                
+    <div class="modal-header">
+        <button class="btn btn-lg btn-default pull-right" onclick="window.location.href='../anadir_productos.html'">Añadir mas elementos</button>
+    </div>
+
+    <table border="2px" class="form-group" class="" id="lista">
+        <tr>
+            <td scope="col">CATEGORIAS</td>
+            <td scope="col">PRODUCTOS</td>
+        </tr>
+        <br>
+        <tr>
+            <td>
 HTML
 
 my $user = 'alumno';
@@ -38,10 +49,9 @@ while (my @row = $sth1->fetchrow_array()) {
 }
 
 print <<HTML;           
-            </ul>
-        </div>
-        <div class="contenedor_texto" id="Menu">
-            <ul>             
+            </td>
+            
+            <td>             
 HTML
 
 my $sth2 = $dbh->prepare("select * from Productos where Categoria=?");
@@ -59,11 +69,11 @@ while (my @row = $sth2->fetchrow_array()) {
 }
 
 print <<HTML;           
-            </ul>            
-        </div>
-
-        <button onclick="window.location.href='../anadir_productos.html'">Añadir mas elementos</button>
-
+            </ul> </td> 
+        </tr>
+    </table> 
+            
+        </div>        
     </div>
 </body>
 </html>

@@ -63,7 +63,7 @@ while(my @row = $sth->fetchrow_array){
 			print "<p> S/@row2</p>"; # precio producto
 		print"</div>";
 		print"<div style='text-align: center;'>";
-			print "<button id = 'comprar' class = 'botonCompra' onclick=' '>Comprar</button>"; #funcion compra
+			print "<button id = 'comprar' class = 'botonCompra' onclick='doDelete(`@row`)'>Comprar</button>"; #funcion compra 
 		print"</div>";
 
 	print"</div>";
@@ -76,5 +76,25 @@ print <<HTML;
 
 		</div>
 	</body>
+	<script>
+		function doDelete(producto){
+
+			// al hacer click a comprar, se compra elimindose de la base de datos llamando a delete.pl
+
+			let url = "http://192.168.1.6/~alumno/tareaFinal/cgi-bin/delete.pl?producto="+producto;
+			let xhr = new XMLHttpRequest();
+			console.log(url);
+			alert("Producto comprado!");
+
+			xhr.open("GET", url, true);
+			xhr.send();
+			var categoria = "$categoria";
+
+			xhr.onload = function () {
+				location.href ="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria="+categoria;
+			};
+
+		}
+	</script>
 </html>
 HTML

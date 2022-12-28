@@ -20,9 +20,9 @@ print <<HTML;
 			<nav>
 				<select class ="elegir"id="selectbox" name="" onchange="javascript:location.href = this.value;">
 					<option value="">Categorias</option>
-					<option value="http://192.168.1.23/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=teclados">Teclados</option>
-					<option value="http://192.168.1.23/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=mouses">Mouses</option>
-					<option value="http://192.168.1.23/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
+					<option value="http://192.168.1.23/~alumno/Ventas/cgi-bin/producto.pl?Categoria=teclados">Teclados</option>
+					<option value="http://192.168.1.23/~alumno/Ventas/cgi-bin/producto.pl?Categoria=mouses">Mouses</option>
+					<option value="http://192.168.1.23/~alumno/Ventas/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
 				</select>
 				<a href="../paginaPrincipal.html">Pagina principal</a>
 				<a href="../../Cuenta/iniciodesesionC.html">Mi cuenta</a>
@@ -81,7 +81,7 @@ print <<HTML;
 
 			// al hacer click a comprar, se compra elimindose de la base de datos llamando a delete.pl
 
-			let url = "http://192.168.1.23/~alumno/tareaFinal/cgi-bin/delete.pl?producto="+producto;
+			let url = "http://192.168.1.23/~alumno/Ventas/cgi-bin/delete.pl?producto="+producto;
 			let xhr = new XMLHttpRequest();
 			console.log(url);
 			alert("Producto comprado!");
@@ -91,7 +91,7 @@ print <<HTML;
 			var categoria = "$categoria";
 
 			xhr.onload = function () {
-				location.href ="http://192.168.1.23/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria="+categoria;
+				location.href ="http://192.168.1.23/~alumno/Ventas/cgi-bin/producto.pl?Categoria="+categoria;
 			};
 
 		}

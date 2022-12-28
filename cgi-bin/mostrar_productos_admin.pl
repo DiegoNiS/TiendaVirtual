@@ -49,18 +49,20 @@ $sth2->execute($tipo_producto);
 
 while (my @row = $sth2->fetchrow_array()) {
     print "<li>@row[1]: s/. @row[2]</li>\n";
-    print "<div class='divfrm'>"
-    print "<form class='frm' action='./delete.pl?categoria='$tipo_producto'&nombre='@row[1]'>"
-    print "<input type='submit' class='btn' value='delete this'>"
-    print "</form>"
-    print "<form class='frm' action='./edit.pl?categoria='$tipo_producto'&nombre='@row[1]'>"
-    print "<input type='submit' class='btn' value='edit this'></form>"
-    print "/form></div>"
+    print "<div class='divfrm'>";
+    print "<form class='frm' action=\"./delete_producto_user.pl?categoria='".$tipo_producto."'&nombre='".@row[1]."'\">\n";
+    print "<input type='submit' class='btn' value='delete this'>";
+    print "</form>";
+    print "<form class='frm' action=\"./delete_producto_user.pl?categoria='".$tipo_producto."'&nombre='".@row[1]."'\">\n";
+    print "<input type='submit' class='btn' value='edit this'></form>";
+    print "</div>";
 }
 
 print <<HTML;           
             </ul>            
         </div>
+
+        <button onclick="window.location.href='../anadir_prodcutos.html'">Añadir mas elementos</button>
 
     </div>
 </body>

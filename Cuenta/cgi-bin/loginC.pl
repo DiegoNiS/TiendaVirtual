@@ -5,7 +5,7 @@ use CGI;
 use DBI;
 
 my $q=CGI->new;
-print $q -> header('text/html');
+#print $q -> header('text/html');
 my $usuario = $q->param("usuario");
 my $correo=$q->param("correo");
 my $contrasena=$q->param("contrasena");
@@ -13,7 +13,7 @@ my $contrasena=$q->param("contrasena");
 if(defined($correo) and defined($contrasena) ){
     if(checkLogin($correo,$contrasena)){
         my @arr=checkLogin($correo,$contrasena);
-        successLogin($arr[0],$arr[3],$arr[2]);
+        successLogin();
     }
     else{
         showLogin();
@@ -24,17 +24,17 @@ else{
 }
 
 sub successLogin{
-    print "<script>\n";
-    print "alert('Iniciando cuenta del usuario $usuario ....');\n";
-    print "</script>\n";
-    print $q->redirect("../ventas/paginaPrincipal.html");
+    #print "<script>\n";
+    #print "alert('Iniciando cuenta del usuario $usuario ....');\n";
+    #print "</script>\n";
+    print $q->redirect("../../Ventas/paginaPrincipal.html");
 }
 
 sub showLogin{
     if ($correo ne checkLogin($correo)){
-        print "<script>\n";
-        print "alert('Ese CORREO no existe...');\n";
-        print "</script>\n";
+        #print "<script>\n";
+        #print "alert('Ese CORREO no existe...');\n";
+        #print "</script>\n";
     }
 }
 
@@ -56,5 +56,6 @@ sub checkLogin{
     return @row;
 }
 
-print $q->redirect("../iniciodesesionC.html");
+print $q->redirect("../../Ventas/paginaPrincipal.html");
+
 exit;

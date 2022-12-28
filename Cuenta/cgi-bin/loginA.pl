@@ -55,5 +55,5 @@ sub checkLogin{
     $dbh->disconnect;
     return @row;
 }
-print $q->redirect("../iniciodesesionA.html");
+print $q->redirect("../../cgi-bin/listar_productos_admin.pl");
 exit;

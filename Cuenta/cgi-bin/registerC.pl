@@ -2,13 +2,13 @@
 
 use strict;
 use warnings;
-use CGI qw/:standard/;
+use CGI;
 use DBI;
 use utf8;
 
-my $q = CGI->new;
-print $q->header('text/html');
 
+my $q = CGI->new;
+##print $q->header('text/html');
 my $usuario = $q->param("usuario");
 my $correo = $q->param("correo");
 my $contrasena = $q->param("contrasena");
@@ -49,12 +49,11 @@ sub successRegister{
     my $correo = shift;
 
     # Crea un objeto CGI
-    my $q = CGI->new;
+    # my $q = CGI->new;
 
-    print $q->header; # Imprime el encabezado HTTP
-    print "<script>\n";
-    print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
-    print "</script>\n";
+    ##print "<script>\n";
+    ##print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
+    ##print "</script>\n";
 
     # Redirige a la página iniciodesesionC.html
     print $q->redirect("../iniciodesesionC.html");
@@ -63,16 +62,18 @@ sub successRegister{
 sub showRegister{
     my $usuario = shift;
     my $correo = shift;
+    # my $q1 = CGI->new;
+    #print $q1->header('text/html');
 
     if (scalar(checkUsuario($usuario))) {
-        print "<script>\n";
-        print "alert('Ese USUARIO ya esta registrado, cambie...');\n";
-        print "</script>\n";
+        #print "<script>\n";
+        #print "alert('Ese USUARIO ya esta registrado, cambie...');\n";
+        #print "</script>\n";
     }
     if (scalar(checkUsuario($correo))) {
-        print "<script>\n";
-        print "alert('Ese CORREO ya esta registrado, cambie...');\n";
-        print "</script>\n";
+        #print "<script>\n";
+        #print "alert('Ese CORREO ya esta registrado, cambie...');\n";
+        #print "</script>\n";
     }
 }
 

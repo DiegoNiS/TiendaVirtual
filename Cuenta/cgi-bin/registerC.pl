@@ -43,3 +43,24 @@ sub checkUsuario {
 
     return @row;
 }
+
+sub successRegister{
+    print "<script>\n";
+    print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
+    print "</script>\n";
+    print $q->redirect("./iniciodesesionC.html");
+}
+
+sub showRegister{
+    
+    if ($usuario ne checkUsuario($usuario)){
+        print "<script>\n";
+        print "alert('Ese USUARIO ya esta registrado, cambie...');\n";
+        print "</script>\n";
+    }
+    if ($correo ne checkUsuario($correo)){
+        print "<script>\n";
+        print "alert('Ese CORREO ya esta registrado, cambie...');\n";
+        print "</script>\n";
+    }
+}

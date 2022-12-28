@@ -9,26 +9,28 @@
     <link rel="stylesheet" type="text/css" href="iniciodesesion.css">
     <title>Inicio de Sesion - Cliente</title>
 </head>
+
 <body>
-    <h2>CLIENTE</h2><br>
+        <h2>CLIENTE</h2><br>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="iniciodesesionC.html">
+            <form action="./cgi-bin/register.pl" method="POST">
                 <h1>Crear una cuenta</h1><br>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" /><br>
-                <button>Registrarme</button>
+                <input name="usuario" type="text" placeholder="Nombre de Usuario" required/>
+                <input name="correo" type="email" placeholder="Correo" required/>
+                <input name="contrasena" type="password" placeholder="Contraseña" required/><br>
+                <button type="submit">Registrarme</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#paginadeventas.html">
+            <form action="./cgi-bin/login.pl" method="POST">
                 <h1>Ingresar</h1><br>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" /><br>
-                <button>Ingresar</button>
-            </form>
+                <input name="correo" type="email" placeholder="Correo" required/>
+                <input name="contrasena" type="password" placeholder="Contraseña" required/><br>
+                <button type="submit">Ingresar</button>
+            </form>    
         </div>
+        
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
@@ -44,6 +46,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <p>
             Copyright ©  
@@ -69,4 +72,5 @@
         }       
     </script>
 </body>
+
 </html>

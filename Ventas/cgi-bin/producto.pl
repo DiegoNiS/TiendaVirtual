@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 
 use DBI;
 use CGI;
@@ -20,15 +20,15 @@ print <<HTML;
 			<nav>
 				<select class ="elegir"id="selectbox" name="" onchange="javascript:location.href = this.value;">
 					<option value="">Categorias</option>
-					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=teclados">Teclados</option>
-					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=mouses">Mouses</option>
-					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
+					<option value="http://192.168.1.23/~alumno/TiendaVirtual/Ventas/cgi-bin/producto.pl?Categoria=teclados">Teclados</option>
+					<option value="http://192.168.1.23/~alumno/TiendaVirtual/Ventas/cgi-bin/producto.pl?Categoria=mouses">Mouses</option>
+					<option value="http://192.168.1.23/~alumno/TiendaVirtual/Ventas/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
 				</select>
 				<a href="../paginaPrincipal.html">Pagina principal</a>
 				<a href="../../Cuenta/iniciodesesionC.html">Mi cuenta</a>
 			</nav>
 		</header>
-		<div = style="text-align: center;">
+		<div style="text-align: center;">
 			<img src = "../img/logoUNSA.png" width = "500" height = "227" alt = "Logo UNSA">
 			<p>Seccion $categoria</p>
 		</div>
@@ -42,7 +42,7 @@ HTML
 
 my $user = 'alumno';
 my $password = 'pweb1';
-my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.6";
+my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.23";
 my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar!");;
 
 my $sth = $dbh->prepare("SELECT Nombre FROM Productos WHERE Categoria =?");
@@ -81,7 +81,7 @@ print <<HTML;
 
 			// al hacer click a comprar, se compra elimindose de la base de datos llamando a delete.pl
 
-			let url = "http://192.168.1.6/~alumno/tareaFinal/cgi-bin/delete.pl?producto="+producto;
+			let url = "http://192.168.1.23/~alumno/TiendaVirtual/Ventas/cgi-bin/delete.pl?producto="+producto;
 			let xhr = new XMLHttpRequest();
 			console.log(url);
 			alert("Producto comprado!");
@@ -91,7 +91,7 @@ print <<HTML;
 			var categoria = "$categoria";
 
 			xhr.onload = function () {
-				location.href ="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria="+categoria;
+				location.href ="http://192.168.1.23/~alumno/TiendaVirtual/Ventas/cgi-bin/producto.pl?Categoria="+categoria;
 			};
 
 		}

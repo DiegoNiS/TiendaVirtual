@@ -13,8 +13,8 @@ my $usuario = $q->param("usuario");
 my $correo = $q->param("correo");
 my $contrasena = $q->param("contrasena");
 
-if (defined($usuario) and defined($correo) and defined($contrasena)) {
-    if (!checkUsuario($usuario)) {
+if ($usuario && $correo && $contrasena) {
+    if (!scalar(checkUsuario($usuario))) {
         register($usuario, $correo, $contrasena);
         successRegister($usuario, $correo);
     }
@@ -27,7 +27,7 @@ else {
 }
 
 sub checkUsuario {
-    my $usuarioQuery = $_[0];
+    my $usuarioQuery = shift;
 
     my $user = 'alumno';
     my $password = 'pweb1';
@@ -45,6 +45,9 @@ sub checkUsuario {
 }
 
 sub successRegister{
+    my $usuario = shift;
+    my $correo = shift;
+
     print "<script>\n";
     print "alert('El usuario $usuario ha sido registrado con éxito....');\n";
     print "</script>\n";
@@ -52,13 +55,15 @@ sub successRegister{
 }
 
 sub showRegister{
-    
-    if ($usuario ne checkUsuario($usuario)){
+    my $usuario = shift;
+    my $correo = shift;
+
+    if (scalar(checkUsuario($usuario))) {
         print "<script>\n";
         print "alert('Ese USUARIO ya esta registrado, cambie...');\n";
         print "</script>\n";
     }
-    if ($correo ne checkUsuario($correo)){
+    if (scalar(checkUsuario($correo))) {
         print "<script>\n";
         print "alert('Ese CORREO ya esta registrado, cambie...');\n";
         print "</script>\n";
@@ -66,9 +71,9 @@ sub showRegister{
 }
 
 sub register {
-    my $usuarioQuery=$_[0];
-    my $correoQuery=$_[1];
-    my $contrasenaQuery=$_[2];
+    my $usuarioQuery=shift;
+    my $correoQuery=shift;
+    my $contrasenaQuery=shift;
 
     my $user = 'alumno';
     my $password = 'pweb1';
@@ -81,4 +86,3 @@ sub register {
     $sth ->finish;
     $dbh->disconnect;
 }
-exit;

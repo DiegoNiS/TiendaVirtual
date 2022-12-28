@@ -5,7 +5,9 @@
 }
 body {
     font-family:'Times New Roman', Times, serif;
-    background:rgb(133, 133, 133);
+    background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
     background-attachment: fixed;
     background-position: center;
 }

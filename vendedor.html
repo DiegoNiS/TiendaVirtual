@@ -11,7 +11,16 @@
     <div class="cont">
         <div class="contenedor_lista" id="lista">
             <ul>
-                <li><a href="#">Item 1</a></li>
+                    <li>@row[1]: s/. @row[2]</li>
+                    <div class='divfrm'>
+                        <form class='frm' action='./delete.pl?categoria='>
+                            <input type='submit' class='btn' value='delete this'>
+                        </form>
+                        <form class='frm' action='./edit.pl?nombre='>
+                            <input type='submit' class='btn' value='edit this'></form>
+                        </form>
+                    </div>
+
             </ul>
         </div>
         <div class="contenedor_texto" id="Menu">

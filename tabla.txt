@@ -1,0 +1,12 @@
+Tabla administadores se puede incorporar con la siguiente instrucción.
+
+CREATE TABLE administradores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_de_usuario VARCHAR(255) NOT NULL,
+  contrasena VARCHAR(255) NOT NULL,
+  nombre_completo VARCHAR(255) NOT NULL,
+  correo_electronico VARCHAR(255) NOT NULL,
+  nivel_de_acceso INT NOT NULL,
+  fecha_de_creacion DATETIME NOT NULL,
+  fecha_de_ultimo_inicio_de_sesion DATETIME NOT NULL
+);

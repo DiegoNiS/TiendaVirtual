@@ -1,11 +1,10 @@
 #!/usr/bin/perl -w
-
-use DBI;
-use CGI;
 use strict;
 use warnings;
+use CGI;
+use DBI;
 
-## borramos elemento seleccionado
+# borramos elemento seleccionado
 
 my $q = CGI->new;
 my $producto = $q->param('producto');

@@ -12,7 +12,7 @@ my $nombre=$cgi->param("nombre");
 #Database part
 my $user= 'alumno';
 my $password = 'pweb1';
-my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.24";
+my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.23";
 my $dbh = DBI->connect($dsn, $user, $password) or die ("No se puede conectar");
 
 #Eliminar datos

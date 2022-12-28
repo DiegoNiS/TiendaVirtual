@@ -34,7 +34,7 @@ sub checkUsuario {
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.23';
     my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar a la base de datos");
 
-    my $sql = "SELECT usuario FROM administradores WHERE usuario=?";
+    my $sql = "SELECT usuario FROM Administradores WHERE usuario=?";
     my $sth = $dbh->prepare($sql);
     $sth->execute($usuarioQuery);
     my @row = $sth->fetchrow_array;
@@ -87,7 +87,7 @@ sub register {
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.23';
     my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar a la base de datos");
 
-    my $sth = $dbh->prepare("INSERT INTO administradores(usuario,correo,contrasena) VALUES(?,?,?)");
+    my $sth = $dbh->prepare("INSERT INTO Administradores(usuario,correo,contrasena) VALUES(?,?,?)");
 
     $sth->execute($usuarioQuery,$correoQuery,$contrasenaQuery);
     $sth ->finish;

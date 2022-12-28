@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="icon" href="icon/UNSA.ico">
+		<link rel = "stylesheet" href = "css/estilos.css" >
+		<title> Pagina principal</title>
+		<header>
+			<nav>
+				<form action=""></form>
+				<select class ="elegir"id="selectbox" name="" onchange="javascript:location.href = this.value;">
+					<option value="">Categorias</option>
+					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=teclados">Teclados</option>
+					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=mouses">Mouses</option>
+					<option value="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=monitores">Monitores</option>
+				</select>
+				<a href="paginaPrincipal.html">Pagina principal</a>
+				<a href="login.html">Mi cuenta</a>
+			</nav>
+		</header>
+		<div = style="text-align: center;">
+			<img src = "img/logoUNSA.png" width = "500" height = "227" alt = "Logo">
+		</div>
+	</head>
+
+	<body >
+		<div class="productos">
+			<a href="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=teclados" class="boton" >Teclados</a>
+			<a href="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=mouses" class="boton" >Mouses</a>
+			<a href="http://192.168.1.6/~alumno/tareaFinal/cgi-bin/producto.pl?Categoria=monitores" class="boton" >Monitores</a>
+		</div>
+		<div style="text-align: center;">
+			<h1> Venta de productos tecnologicos </h1>
+			<p id = "bordes4" class="borde">
+				Variedad de productos tecnologicos dentro de las categorias: Computacion, 
+				Perifericos, Tablets, y mucho mas
+			</p>
+		</div>
+	</body>
+
+
+</html>

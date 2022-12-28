@@ -1,0 +1,89 @@
+html{
+	font-family: "Lucida Console", "Courier New", monospace;
+  color: white;
+}
+body{
+	height: 800px;
+	padding: 0px;
+	margin: 0px;
+  background: linear-gradient(rgb(48, 48, 48), black);
+  background-attachment: fixed;
+}
+p{
+  color: white;
+}
+.borde{
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+	transition: 2s;
+  border: thick solid white; 
+  width: 1000px;
+}
+header{
+	background-color: gray;
+	padding: 25px;
+	margin-bottom: 40px;
+
+}
+
+nav{
+	padding: 0px;
+	margin: 0px;
+}
+
+nav a{
+	text-decoration: none;
+  font-size: larger;
+	color: white;
+	margin: 0 30px;
+
+}
+.boton{
+  margin: 30px 30px;
+  padding: 15px 30px;
+  color: white;
+  border: thick solid white; 
+  text-decoration: none;
+  font-size: 20px;
+  transition: 2s;
+}
+.productos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.periferico{
+  align-items: center;
+  height: 510px;
+  width: 350px;
+  border: thick solid white;
+  margin: 30px 30px;
+  transition: 2s;
+}
+.informacion{
+  margin: 10px;
+  height: 80px;
+  width: 90%;
+}
+.elegir{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: larger;
+  border-radius: 4px;
+  background-color:  gray;
+  border: 2px solid  gray;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+.botonCompra{
+  margin: 20px 20px;
+  padding: 10px 20px;
+  color: white;
+  background-color: black;
+  border: thick solid #DB7634; 
+  text-decoration: none;
+  font-size: 15px;
+  transition: 2s;
+}

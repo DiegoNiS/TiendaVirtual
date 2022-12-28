@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -w
 
 use DBI;
 use CGI;
@@ -12,7 +12,7 @@ my $producto = $q->param('producto');
 
 my $user= 'alumno';
 my $password = 'pweb1';
-my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.6";
+my $dsn = "DBI:MariaDB:database=pweb1;host=192.168.1.23";
 my $dbh = DBI->connect($dsn, $user, $password) or die ("No se puede conectar");
 
 # consultamos producto

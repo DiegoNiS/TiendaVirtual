@@ -64,3 +64,21 @@ sub showRegister{
         print "</script>\n";
     }
 }
+
+sub register {
+    my $usuarioQuery=$_[0];
+    my $correoQuery=$_[1];
+    my $contrasenaQuery=$_[2];
+
+    my $user = 'alumno';
+    my $password = 'pweb1';
+    my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.23';
+    my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar a la base de datos");
+
+    my $sth = $dbh->prepare("INSERT INTO Administradores(usuario,correo,contrasena) VALUES(?,?,?)");
+
+    $sth->execute($usuarioQuery,$correoQuery,$contrasenaQuery);
+    $sth ->finish;
+    $dbh->disconnect;
+}
+exit;
